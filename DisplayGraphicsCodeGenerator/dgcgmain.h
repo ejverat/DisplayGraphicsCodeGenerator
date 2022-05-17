@@ -15,7 +15,11 @@ public:
     DGCGMain(QWidget *parent = nullptr);
     ~DGCGMain();
 
+private slots:
+    void on_pbLoadImage_clicked();
+
 private:
     Ui::DGCGMain *ui;
+    QString imageFilename;
 };
 #endif // DGCGMAIN_H
