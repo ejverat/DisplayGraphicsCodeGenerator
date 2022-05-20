@@ -1,12 +1,14 @@
 
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
+#include "QtImageLoader.h"
 
 using namespace testing;
 
+
 TEST(DisplayGraphicCodeGenerator, ImageLoaderReturnErrorIFileDontExists)
 {
-    EXPECT_EQ(1, 1);
-    ASSERT_THAT(0, Eq(0));
+    QtImageLoader imageLoader;
+    ASSERT_THAT(imageLoader.Load(""), Eq(false));
 }
 

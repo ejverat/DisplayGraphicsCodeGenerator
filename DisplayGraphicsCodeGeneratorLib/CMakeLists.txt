@@ -16,6 +16,13 @@ add_library(DisplayGraphicsCodeGeneratorLib SHARED
   DisplayGraphicsCodeGeneratorLib_global.h
   displaygraphicscodegeneratorlib.cpp
   displaygraphicscodegeneratorlib.h
+  ImageLoader.h
+  QtImageLoader.h
+  QtImageLoader.cpp
+)
+
+target_include_directories(DisplayGraphicsCodeGeneratorLib
+    PUBLIC ${CMAKE_CURRENT_LIST_DIR}
 )
 
 target_link_libraries(DisplayGraphicsCodeGeneratorLib PRIVATE Qt${QT_VERSION_MAJOR}::Core)
