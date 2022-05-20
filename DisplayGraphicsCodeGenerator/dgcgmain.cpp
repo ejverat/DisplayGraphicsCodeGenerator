@@ -17,8 +17,10 @@ DGCGMain::~DGCGMain()
 
 void DGCGMain::on_pbLoadImage_clicked()
 {
-    QString filename = QFileDialog::getOpenFileName(this, tr("Load image"), qgetenv("$HOME"), tr("Images (*.png *.xpm *.jpg)"));
-	this->imageFilename = filename;
-	qDebug() << imageFilename;
+    QString filename = QFileDialog::getOpenFileName(this, tr("Load image"), QDir::homePath(), tr("Images (*.png *.xpm *.jpg *.bmp *.pgm)"));
+    this->imageFilename = filename;
+    qDebug() << imageFilename;
+    qDebug() << image.load(imageFilename);
+    qDebug() << image.size();
+    qDebug() << image.format();
 }
-

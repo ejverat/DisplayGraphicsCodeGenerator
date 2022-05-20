@@ -21,5 +21,6 @@ private slots:
 private:
     Ui::DGCGMain *ui;
     QString imageFilename;
+    QImage image;
 };
 #endif // DGCGMAIN_H
