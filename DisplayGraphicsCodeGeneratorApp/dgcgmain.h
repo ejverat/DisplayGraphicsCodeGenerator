@@ -2,6 +2,7 @@
 #define DGCGMAIN_H
 
 #include <QMainWindow>
+#include "QtImageLoader.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class DGCGMain; }
@@ -21,6 +22,6 @@ private slots:
 private:
     Ui::DGCGMain *ui;
     QString imageFilename;
-    QImage image;
+    QtImageLoader image;
 };
 #endif // DGCGMAIN_H
