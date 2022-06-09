@@ -6,7 +6,7 @@
 using namespace testing;
 
 
-TEST(DisplayGraphicCodeGenerator, ImageLoaderReturnsFalseIfEmptyName)
+TEST(QtImageLoader, GIVEN_APathWithEmptyStringValue_WHEN_IsLoad_THEN_ReturnFalse)
 {
     QtImageLoader imageLoader;
     ASSERT_THAT(imageLoader.Load(""), Eq(false));

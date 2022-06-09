@@ -2,7 +2,7 @@
 #define DGCGMAIN_H
 
 #include <QMainWindow>
-#include "QtImageLoader.h"
+//#include "QtImageLoader.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class DGCGMain; }
@@ -19,9 +19,15 @@ public:
 private slots:
     void on_pbLoadImage_clicked();
 
+    void on_pbLoadCode_clicked();
+
+    void on_pbGenerate_clicked();
+
 private:
     Ui::DGCGMain *ui;
     QString imageFilename;
-    QtImageLoader image;
+    QString codeTemplateFilename;
+    QString codeOutput = "/home/evera/";
+    //QtImageLoader image;
 };
 #endif // DGCGMAIN_H

@@ -1,18 +1,18 @@
 #include <stdint.h>
-#include "image.h"
+#include "graphic2d_objects.h"
 
-//use extern %varname%; in your code
+//use extern graphic_t %varname%; in your code
 
 const uint8_t %varname%_array[] = 
 {
 	%array%
-}
+};
 
-const image_t %varname% = 
+const graphic_t %varname% = 
 {
 	%width%,
 	%height%,
 	(const uint8_t*) &%varname%_array[0],
-	%pixelsperbyte%
-}
+	%pixel_bit_size%
+};
 

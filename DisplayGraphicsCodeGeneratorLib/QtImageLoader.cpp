@@ -1,5 +1,5 @@
 #include "QtImageLoader.h"
-#include "qtto2dgrayscale4bitsimageconverter.h"
+//#include "qtto2dgrayscale4bitsimageconverter.h"
 
 bool QtImageLoader::Load(std::string filename)
 {
@@ -11,13 +11,14 @@ bool QtImageLoader::Load(std::string filename)
     if (isLoaded)
     {
         //convert qt to desired image type
-        QtTo2DGrayScale4bitsImageConverter converter(std::make_shared<QImage>(qImg));
+        /*QtTo2DGrayScale4bitsImageConverter converter(std::make_shared<QImage>(qImg));
         image = converter.Convert();
+        */
     }
     return isLoaded;
 }
 
-std::shared_ptr<Image> QtImageLoader::GetImage()
+std::shared_ptr<DGCG::Image> QtImageLoader::GetImage()
 {
     return image;
 }

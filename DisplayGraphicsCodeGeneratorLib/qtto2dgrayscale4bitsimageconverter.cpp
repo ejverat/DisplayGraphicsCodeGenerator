@@ -25,6 +25,7 @@ std::unique_ptr<Image> QtTo2DGrayScale4bitsImageConverter::Convert()
         for (std::size_t y = 0; y < imgSize.height(); y++)
         {
             auto pixelValue = qimg->pixel(x,y);
+            auto grayValue = qGray(qimg->pixel(x,y));
             convertedImage->Set(Point2D_SizeT(x,y),std::make_unique<PixelUnsigned4Bits>(ValueScaler(pixelValue,0,255)));
         }
     }

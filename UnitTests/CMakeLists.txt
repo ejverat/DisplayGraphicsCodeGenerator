@@ -41,7 +41,7 @@ endif ()
 
 include_directories(${GTestIncludes})
 
-add_executable(DisplayGraphicsCodeGeneratorTests main.cpp tst_imageloader.cpp
+add_executable(DisplayGraphicsCodeGeneratorTests main.cpp tst_imageloader.cpp tst_QtImage2D8BitsGrayScaleToDGCGImage2DMono.cpp
                ${GTestFiles})
 add_test(NAME DisplayGraphicsCodeGeneratorTests COMMAND DisplayGraphicsCodeGeneratorTests)
 target_link_libraries(DisplayGraphicsCodeGeneratorTests PRIVATE Threads::Threads

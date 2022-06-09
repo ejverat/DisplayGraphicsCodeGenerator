@@ -9,8 +9,8 @@ class ImageLoader
 {
 public:
     virtual bool Load(std::string filename) = 0;
-
-    virtual std::shared_ptr<Image> GetImage() = 0;
+    virtual std::shared_ptr<DGCG::Image> GetImage() = 0;
+    virtual ~ImageLoader() = default;
 };
 
 #endif // IMAGELOADER_H

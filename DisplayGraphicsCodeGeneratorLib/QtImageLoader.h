@@ -11,10 +11,10 @@ class QtImageLoader : public ImageLoader
 {
 public:
     bool Load(std::string filename) override;
-    virtual std::shared_ptr<Image> GetImage() override;
+    virtual std::shared_ptr<DGCG::Image> GetImage() override;
 
 private:
-    std::shared_ptr<Image> image;
+    std::shared_ptr<DGCG::Image> image;
 };
 
 #endif // QTIMAGELOADER_H

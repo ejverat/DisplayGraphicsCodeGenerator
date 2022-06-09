@@ -18,8 +18,8 @@ add_library(DisplayGraphicsCodeGeneratorLib SHARED
   displaygraphicscodegeneratorlib.cpp
   displaygraphicscodegeneratorlib.h
   Image.h
-  image2dgrayscale4bits.h
-  image2dgrayscale4bits.cpp
+  #image2dgrayscale4bits.h
+  #image2dgrayscale4bits.cpp
   ImageConverter.h
   ImageLoader.h
   Pixel.h
@@ -30,8 +30,16 @@ add_library(DisplayGraphicsCodeGeneratorLib SHARED
   point2d_sizet.cpp
   QtImageLoader.h
   QtImageLoader.cpp
-  qtto2dgrayscale4bitsimageconverter.h
-  qtto2dgrayscale4bitsimageconverter.cpp
+  #qtto2dgrayscale4bitsimageconverter.h
+  #qtto2dgrayscale4bitsimageconverter.cpp
+  QImage8BGrayToImageMonoBinary.h
+  QImage8BGrayToImageMonoBinary.cpp
+  ImageMonoBinary.h
+  ImageMonoBinary.cpp
+  ImageSerializer.h
+  ImageMonoBinaryCSerializer.h
+  ImageMonoBinaryCSerializer.cpp
+  ImageUtils.h ImageUtils.cpp
 )
 
 target_include_directories(DisplayGraphicsCodeGeneratorLib
