@@ -80,3 +80,13 @@ void DGCGMain::on_pbGenerate_clicked()
 
 }
 
+
+void DGCGMain::on_pbOutputDir_clicked()
+{
+
+    codeOutput = QFileDialog::getExistingDirectory(this,tr("Select output directory"),QDir::homePath());
+    codeOutput += "/";
+    this->ui->labelOutputDir->setText(codeOutput);
+    qDebug() << codeOutput;
+}
+

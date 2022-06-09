@@ -23,6 +23,8 @@ private slots:
 
     void on_pbGenerate_clicked();
 
+    void on_pbOutputDir_clicked();
+
 private:
     Ui::DGCGMain *ui;
     QString imageFilename;
