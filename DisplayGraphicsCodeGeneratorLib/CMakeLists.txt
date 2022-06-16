@@ -13,7 +13,7 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui)
 
-add_library(DisplayGraphicsCodeGeneratorLib SHARED
+add_library(DisplayGraphicsCodeGeneratorLib STATIC
   DisplayGraphicsCodeGeneratorLib_global.h
   displaygraphicscodegeneratorlib.cpp
   displaygraphicscodegeneratorlib.h

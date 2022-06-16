@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Display Graphics Code Generator</Name>
+    <Version>1.0.0</Version>
+    <Title>DGCG Installer</Title>
+    <Publisher>EVera</Publisher>
+    <StartMenuDir>DGCG</StartMenuDir>
+    <TargetDir>@ApplicationsDir@/DGCG</TargetDir>
+</Installer>

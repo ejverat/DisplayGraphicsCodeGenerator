@@ -44,7 +44,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(DisplayGraphicsCodeGeneratorApp PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+target_link_libraries(DisplayGraphicsCodeGeneratorApp PUBLIC Qt${QT_VERSION_MAJOR}::Widgets
     PUBLIC DisplayGraphicsCodeGeneratorLib
 )
 
@@ -59,3 +59,13 @@ set_target_properties(DisplayGraphicsCodeGeneratorApp PROPERTIES
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(DisplayGraphicsCodeGeneratorApp)
 endif()
+#add_custom_command(
+#    TARGET DisplayGraphicsCodeGeneratorApp POST_BUILD
+#    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+#        $<TARGET_FILE:Qt${QT_VERSION_MAJOR}::Widgets>
+#        $<TARGET_FILE_DIR:DisplayGraphicsCodeGeneratorApp>
+#)
+install(TARGETS DisplayGraphicsCodeGeneratorApp DESTINATION bin)
+#install(FILES $<TARGET_FILE:Qt${QT_VERSION_MAJOR}::Widgets> DESTINATION bin)
+#install(FILES $<TARGET_FILE:Qt${QT_VERSION_MAJOR}::Gui> DESTINATION bin)
+#install(FILES $<TARGET_FILE:Qt${QT_VERSION_MAJOR}::Core> DESTINATION bin)

@@ -3,6 +3,7 @@
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QFile>
+#include <QDebug>
 #include "QImage8BGrayToImageMonoBinary.h"
 #include "ImageMonoBinaryCSerializer.h"
 #include <memory>

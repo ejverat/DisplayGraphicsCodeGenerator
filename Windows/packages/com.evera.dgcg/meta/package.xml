@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>DGCG</DisplayName>
+    <Description>Install DGCG.</Description>
+    <Version>0.1.0-1</Version>
+    <ReleaseDate>2022-06-12</ReleaseDate>
+    <Licenses>
+        <License name="Unknown Public License Agreement" file="license.txt" />
+    </Licenses>
+    <Default>script</Default>
+    <Script>installscript.qs</Script>
+    <UserInterfaces>
+        <UserInterface>page.ui</UserInterface>
+    </UserInterfaces>
+</Package>
