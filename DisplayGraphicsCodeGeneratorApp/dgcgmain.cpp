@@ -4,6 +4,7 @@
 #include <QFileInfo>
 #include <QFile>
 #include <QDebug>
+#include <QMessageBox>
 #include "QImage8BGrayToImageMonoBinary.h"
 #include "ImageMonoBinaryCSerializer.h"
 #include <memory>
@@ -28,16 +29,6 @@ void DGCGMain::on_pbLoadImage_clicked()
     QFileInfo fileInfo(imageFilename);
     this->ui->labelImageFilename->setText(imageFilename);
     qDebug() << fileInfo.fileName();
-    /*auto image = std::make_shared<QImage>();
-    image->load(filename);
-    DGCG::QImage8BGrayToImageMonoBinary imageConverter(image);
-    std::shared_ptr<DGCG::Image> newImage = imageConverter.Convert();
-    DGCG::ImageMonoBinaryCSerializer serializer{std::dynamic_pointer_cast<DGCG::ImageMonoBinary>(newImage),"",filename.toStdString()};
-    auto imgStr = serializer.Serialize();
-    */
-    //qDebug() << image.Load(imageFilename.toStdString());
-    //qDebug() << image.GetImage().size();
-    //qDebug() << image.GetImage().format();
 }
 
 void DGCGMain::on_pbLoadCode_clicked()
@@ -57,10 +48,19 @@ void DGCGMain::on_pbGenerate_clicked()
 
 
     auto image = std::make_shared<QImage>();
-    image->load(imageFilename);
+
+    if (!image->load(imageFilename))
+    {
+        QMessageBox::critical(this,tr("Can't load image"),tr("Error while trying to load image"));
+        return;
+    }
 
     QFile codeTemplae(codeTemplateFilename);
-    codeTemplae.open(QIODevice::ReadOnly);
+    if(!codeTemplae.open(QIODevice::ReadOnly))
+    {
+        QMessageBox::critical(this,tr("Can't load code template"),tr("Error while trying to load code template"));
+        return;
+    }
     QTextStream in(&codeTemplae);
 
     QString inputFormat = in.readAll();
@@ -74,10 +74,16 @@ void DGCGMain::on_pbGenerate_clicked()
 
     QString outputFile = codeOutput + imageFile.baseName() + "." + templateCodeFile.completeSuffix();
     QFile outCode(outputFile);
-    outCode.open(QIODevice::WriteOnly);
+    if ( !outCode.open(QIODevice::WriteOnly) )
+    {
+        QMessageBox::critical(this,tr("Can't create output"),tr("Error while trying to create the output file"));
+        return;
+    }
     QTextStream out(&outCode);
     out << QString(imgStr.c_str());
     outCode.close();
+
+    QMessageBox::information(this,tr("Code was generated"),tr("Code generated successfully"));
 
 }
 
